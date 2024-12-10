@@ -1,13 +1,19 @@
 import "./App.css";
+import Home from "./components/home/Home";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import CurrencyTracker from "./components/tracker/CurrencyTracker";
 
-function App() {
+const App = () => {
   return (
     <>
-      <div>
-        <h1>Currency Exchange Tracker</h1>
-      </div>
+      <Router>
+        <Routes>
+          <Route path="/home" element={<Home />} />
+          <Route path="/currency-exchange" element={<CurrencyTracker />} />
+        </Routes>
+      </Router>
     </>
   );
-}
+};
 
 export default App;
